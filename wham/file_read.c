@@ -75,6 +75,7 @@ char *line;
 char filename[LINESIZE];
 int vals, mc_samples;
 double loc, spring, temp;
+double r[4], rk;
 double sum;
 double correl_time;
 int num_points=0; 
@@ -101,13 +102,16 @@ while (line != NULL)
     {
     if (is_metadata(line))
         {
-        vals = sscanf(line, "%s %lf %lf %lf %lf", filename, &loc, &spring, 
+        vals = sscanf(line, "%s %lf %lf %lf %lf", filename, &r[0], &r[1], &r[2], &r[3], &rk, 
                                               &correl_time, &temp);
         if (vals >= 3)
             {
             //printf("%s,  %f,   %f\n", filename, loc, spring);
-            hist_group->bias_locations[current_window] = loc;
-            hist_group->spring_constants[current_window] = spring;
+            for (m = 0; m < 4; m++)
+            {
+                hist_group->bias_locations[current_window][m] = r[m];    
+            }
+            hist_group->spring_constants[current_window] = rk;
 
             if (vals == 3)
                 {
