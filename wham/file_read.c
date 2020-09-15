@@ -102,7 +102,7 @@ while (line != NULL)
     {
     if (is_metadata(line))
         {
-        vals = sscanf(line, "%s %lf %lf %lf %lf", filename, &r[0], &r[1], &r[2], &r[3], &rk, 
+        vals = sscanf(line, "%s %lf %lf %lf %lf %lf %lf %lf", filename, &r[0], &r[1], &r[2], &r[3], &rk, 
                                               &correl_time, &temp);
         if (vals >= 3)
             {
