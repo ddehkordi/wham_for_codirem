@@ -74,7 +74,7 @@ int read_metadata(FILE *file, struct hist_group *hist_group)
 char *line;
 char filename[LINESIZE];
 int vals, mc_samples;
-double loc, spring, temp;
+double temp;
 double r[4], rk;
 double sum;
 double correl_time;

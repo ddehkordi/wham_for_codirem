@@ -101,7 +101,7 @@ struct hist_group *h;
 
 h = hist_group_alloc();
 h->num_windows = num_windows;
-h->bias_locations = (double *) malloc(sizeof(double)*num_windows);
+h->bias_locations = (double *) malloc(sizeof(double)*num_windows*4);
 if (!h->bias_locations)
     {
     printf("allocation error in make_hist_group: %s\n", strerror(errno));
@@ -235,7 +235,7 @@ double spring, loc;
 double dx;
 
 spring = h->spring_constants[index];
-loc = h->bias_locations[index];
+loc = h->bias_locations[index][0];
 dx = coor - loc;
 // minimum image if periodic -- assumes angles in degrees
 if (PERIODIC)
