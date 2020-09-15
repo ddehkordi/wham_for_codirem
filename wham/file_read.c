@@ -107,9 +107,9 @@ while (line != NULL)
         if (vals >= 3)
             {
             //printf("%s,  %f,   %f\n", filename, loc, spring);
-            for (m = 0; m < 4; m++)
+            for (i = 0; i < 4; i++)
             {
-                hist_group->bias_locations[current_window][m] = r[m];    
+                hist_group->bias_locations[current_window][i] = r[i];    
             }
             hist_group->spring_constants[current_window] = rk;
 
