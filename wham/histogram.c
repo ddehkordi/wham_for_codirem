@@ -101,7 +101,7 @@ struct hist_group *h;
 
 h = hist_group_alloc();
 h->num_windows = num_windows;
-h->bias_locations = (double *) sizeof(double)*4.0*num_windows;
+h->bias_locations = (double *) malloc(sizeof(double)*num_windows);
 if (!h->bias_locations)
     {
     printf("allocation error in make_hist_group: %s\n", strerror(errno));
