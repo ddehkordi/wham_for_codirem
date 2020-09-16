@@ -235,7 +235,7 @@ double spring, loc;
 double dx;
 
 spring = h->spring_constants[index];
-loc = h->bias_locations[index][0];
+loc = h->bias_locations[index];
 dx = coor - loc;
 // minimum image if periodic -- assumes angles in degrees
 if (PERIODIC)

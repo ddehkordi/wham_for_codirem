@@ -59,7 +59,7 @@ int num_mc_samples;
 struct hist_group
 {
 int num_windows; // number of separate biased trajectory windows
-double *bias_locations[4]; // array of locations of the bias for each window 
+double *bias_locations; // array of locations of the bias for each window 
 double *spring_constants; // array of spring constants for the biases for
                           // each window
 double *F; // array of free energy perturbations due to restraint
